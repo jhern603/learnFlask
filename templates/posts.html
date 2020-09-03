@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>AniDachi - Posts</title>
+{% endblock %}
+
+{% block body %} 
+<div>
+    <br>
+    <br>
+    <br>
+    <h1 style="display:inline">All Posts</h1>
+    <a style="display:inline" href="/posts/new" class="btn btn-outline-success btn-sm float-right">New Post</a>
+</div>
+<hr>
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    {% if post.author %}
+        <small>By: {{ post.author }} on {{ post.date_posted }}<small>
+    {% else %}
+        <small>Author Unavailable on {{ post.date_posted }}</small>
+    {% endif %}
+    <br>
+    <br>
+    <p style="white-space:break-spaces">{{ post.content }}</p>
+    <a href='/posts/delete/{{post.id}}' type="button" class="btn btn-outline-danger btn-sm">Delete</a>
+    <a href='/posts/edit/{{post.id}}' type="button" class="btn btn-outline-secondary btn-sm" >Edit</a>
+    <hr>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>AniDachi - Posts</title>
+{% endblock %}
+
+{% block body %} 
+<br>
+<h2>Create New Post:</h2>
+<form action="/posts" method="POST">
+    <input class="form-control mr-sm-2" placeholder="Title" aria-label="Title" type="text" name='title' id='title'>
+    <br>
+    <input class="form-control mr-sm-2" placeholder="Author" aria-label="Author" type="text" name= 'author' id='author'>
+    <br>
+    <textarea class="form-control mr-sm-2" type="text" name='content' id='content' aria-label="Enter Content" placeholder="Enter the body of your content."></textarea>
+    <br>
+    
+    <input type="submit" value='Post' type="button" class="btn btn-outline-primary btn-sm">
+
+</form>
+<hr>
+
+{% endblock %}

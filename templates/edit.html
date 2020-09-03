@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>AniDachi - Posts</title>
+{% endblock %}
+
+{% block body %} 
+<h1>Editing Post</h1>
+
+<hr>
+
+<form action="/posts/edit/{{post.id}}" method="POST">
+    <input value="{{post.title}}" class="form-control mr-sm-2" placeholder="Title" aria-label="Title" type="text" name='title' id='title'>
+    <br>
+    <input value="{{post.author}}" class="form-control mr-sm-2" placeholder="Author" aria-label="Author" type="text" name= 'author' id='author'>
+    <br>
+    <textarea class="form-control mr-sm-2" type="text" name='content' id='content' aria-label="Enter Content" placeholder="Enter the body of your content.">{{post.content}}</textarea>
+    <br>
+    <input type="submit" value='Save' type="button" class="btn btn-outline-primary btn-sm">
+</form>
+
+{% endblock %}
